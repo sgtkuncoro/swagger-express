@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+  version: "0.7.2"
+  title: Swagger Node Sequelize Boilerplate
+  description: Boilerplate for develop api with swagger+node+sequelize.
+# during dev, should point to your local machine
+? host
+# basePath prefixes all resource paths
+basePath: /v1
+#
+tags:
+  - name: User
+    description: Everything about user
+schemes:
+  # tip: remove http to make production-grade
+  - http
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /user/{userId}:
+    x-swagger-router-controller: user_ctrl
+    get:
+      tags:
+        - User
+      summary: get user by id
+      description: will be return user information
+      operationId: userProfile
+      parameters:
+        - in: path
+          name: userId
+          default: 0
+          description: ID of user that needs to be fetched
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/User"
+        default:
+          description: error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+definitions:
+  SuccessResponse:
+    required:
+      - success
+      - message
+    properties:
+      success:
+        type: boolean
+      message:
+        type: string
+  ErrorResponse:
+    required:
+      - success
+      - message
+    properties:
+      success:
+        type: boolean
+      message:
+        type: string
+  User:
+    properties:
+      id:
+        type: integer
+      first_name:
+        type: string
+      last_name:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      createdAt:
+        type:
+          - string
+          - "null"
+      updatedAt:
+        type:
+          - string
+          - "null"
