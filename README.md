@@ -1,2 +1,2 @@
 # swagger-node-sequelize-mysql
-NodeJS API Server - Boilerplate with support for Sequelize MySQL and Swagger Documentation
+NodeJS API Server - Boilerplate for build API, support Sequelize MySQL and Swagger Documentation
