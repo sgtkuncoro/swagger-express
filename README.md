@@ -1,2 +1,2 @@
-# Swagger Express UI
-NodeJS API Server - Boilerplate for build API, support Sequelize MySQL and Swagger Documentation
+# Swagger OpenAPI + Express 
+Swagger OpenAPI + Express. NodeJS backend boilerplate to build API Docs with Swagger OpenAPI, support Sequelize MySQL
